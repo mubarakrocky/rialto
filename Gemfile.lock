@@ -18,6 +18,12 @@ GIT
     spree_gateway (3.0.0.beta)
       spree_core (~> 3.0.0)
 
+PATH
+  remote: apps/fish
+  specs:
+    fish (0.0.1)
+      rails (~> 4.2.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -172,6 +178,7 @@ GEM
     premailer-rails (1.8.2)
       actionmailer (>= 3, < 5)
       premailer (~> 1.7, >= 1.7.9)
+    puma (2.15.3)
     rabl (0.9.4.pre1)
       activesupport (>= 2.3.14)
     rack (1.6.4)
@@ -325,9 +332,11 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  fish!
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
+  puma
   rails (= 4.2.5)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
