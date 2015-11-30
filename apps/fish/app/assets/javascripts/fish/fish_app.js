@@ -1,2 +1,16 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+
+var ProductList = function() {
+	var productJson = function(data) {
+		ProductList.setProducts(data.products);
+	};
+	
+	Service.get("/api/products", productJson);
+};
+
+ProductList.setProducts = function(products) {
+	console.log(products);
+};
+
+var ProductBox = function() {
+	
+};

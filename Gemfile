@@ -41,9 +41,8 @@ gem 'puma'
 # gem 'debugger', group: [:development, :test]
 
 
-gem 'spree', '3.0.4'
-gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
+gem 'solidus'
+gem 'solidus_auth_devise'
 
 BootInquirer.each_active_app do |app|
   gemspec path: "apps/#{app.gem_name}"
