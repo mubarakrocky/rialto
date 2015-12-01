@@ -15,7 +15,8 @@
 
 class BootInquirer
   APPS = {
-    'fish' => 'fish'
+    'fish' => 'fish',
+    'logistic' => 'logistic'
   }
 
   class << self
