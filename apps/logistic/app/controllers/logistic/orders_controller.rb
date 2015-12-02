@@ -4,7 +4,10 @@ module Logistic
   class OrdersController < ApplicationController
     
     def index
-      @orders = Order.order('id DESC').page(params[:page]).per(25)
+      @orders = Order.joins(:user).order('id DESC').page(params[:page]).per(10)
+      @total_count = Order.joins(:user).count
+      page_count = (@total_count / 11)
+      @page_count = page_count + 1
     end
     
     def get_last_order
@@ -21,11 +24,29 @@ module Logistic
       
       if params[:status].present?
         order.status = params[:status]
+      else
+        send_sms
       end
       order.save
       respond_to do |format|
         format.json { render json: order }
       end
+    end
+    
+    private
+    
+    def send_sms
+      twilio_sid = "AC27fb5e688498a1918ddd837e3a67b525"
+      twilio_token = "00c865b0f34587f7581e182defdca551"
+      twilio_phone_number = "+13166334062"
+  
+      client = Twilio::REST::Client.new twilio_sid, twilio_token
+  
+      client.messages.create(
+        :from => twilio_phone_number,
+        :to => '+919744523883',
+        :body => "A new order has been created"
+      )
     end
   end
 end

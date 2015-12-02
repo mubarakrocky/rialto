@@ -33,5 +33,15 @@ module Rialto
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    
+    config.action_mailer.smtp_settings = {
+      :address   => "smtp.sendgrid.net",
+      :port      => 587,
+      :domain    => 'fishcart.in',
+      :user_name => 'mubarakrocky',
+      :password  => 'mubarak@123',
+      :authentication => :plain,
+      :enable_starttls_auto => true
+    }
   end
 end

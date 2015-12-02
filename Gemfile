@@ -44,6 +44,8 @@ gem 'puma'
 gem 'solidus'
 gem 'solidus_auth_devise'
 
+gem 'twilio-ruby'
+
 BootInquirer.each_active_app do |app|
   gemspec path: "apps/#{app.gem_name}"
 end
