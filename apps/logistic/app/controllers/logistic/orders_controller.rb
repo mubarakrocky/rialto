@@ -8,7 +8,8 @@ module Logistic
     end
     
     def get_last_order
-      order = Order.order('id DESC').first
+      order = Order.joins(:user)
+                .order('id DESC').first
       respond_to do |format|
         format.json { render json: order }
       end
@@ -17,6 +18,10 @@ module Logistic
     def update
       order = Order.find(params[:id])
       order.is_alerted = true
+      
+      if params[:status].present?
+        order.status = params[:status]
+      end
       order.save
       respond_to do |format|
         format.json { render json: order }

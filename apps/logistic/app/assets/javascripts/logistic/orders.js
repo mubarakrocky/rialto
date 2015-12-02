@@ -9,17 +9,32 @@
    			if(data.is_alerted == false) {
    				var audio = new Audio('/logistic/leanonmajo_Wz4UCWH3.mp3');
 				audio.play();
-				updateOrder(data.id);
+				updateOrder({id: data.id});
+				setTimeout(function(){
+					location.reload();
+				}, 20000);
    			}
    		}
    	});
-   }, 60000);
+   }, 30000);
+   
 })();
 
-function updateOrder(id) {
+function updateOrder(params, onSuccess) {
 	$.ajax({
 		url: "/logistic/orders.json",
 		type: 'PUT',
-		data: {id: id}
+		data: params,
+		success: onSuccess
 	});
 }
+
+
+$('document').ready(function(){
+	$(".done-btn").click(function(e){
+   		var orderId = $(e.target).attr("orderid");
+   		updateOrder({id: orderId, status: "Done"}, function(){
+   			location.reload();
+   		});
+   });
+});

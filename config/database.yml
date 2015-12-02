@@ -32,7 +32,7 @@ test:
 java:
   <<: *default
   database: fishcart
-  host: 103.10.235.202
+  host: 103.10.235.203
   username: root
   password: PQLmoq15945
   port: 3306
@@ -58,5 +58,5 @@ java:
 production:
   <<: *default
   database: rialto_production
-  username: rialto
-  password: <%= ENV['RIALTO_DATABASE_PASSWORD'] %>
+  username: root
+  password: mubarak
