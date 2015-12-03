@@ -1,5 +1,12 @@
-<h1>Notification#send_confirmation</h1>
-
-<p>
-  <%= @greeting %>, find me in app/views/logistic/notification/send_confirmation.html.erb
-</p>
+<div>
+	Hi,
+</div>
+<div>
+	A new order has been placed. Plese check the order list.
+</div>
+<div>
+	Order ID: <%= @order.id %> <br />
+	Name: <%= @order.product.camelcase %> <br />
+	Quantity: <%= @order.quantity %> <br />
+	Phone Number: <%= @order.number %> <br />
+</div>

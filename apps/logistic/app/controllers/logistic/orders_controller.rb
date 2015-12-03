@@ -19,17 +19,18 @@ module Logistic
     end
     
     def update
-      order = Order.find(params[:id])
-      order.is_alerted = true
+      @order = Order.find(params[:id])
+      @order.is_alerted = true
       
       if params[:status].present?
-        order.status = params[:status]
+        @order.status = params[:status]
       else
-        send_sms
+        send_order_confirm_email
       end
-      order.save
+      
+      @order.save
       respond_to do |format|
-        format.json { render json: order }
+        format.json { render json: @order }
       end
     end
     
@@ -47,6 +48,10 @@ module Logistic
         :to => '+919744523883',
         :body => "A new order has been created"
       )
+    end
+    
+    def send_order_confirm_email
+      Logistic::Notification.send_confirmation(@order).deliver!
     end
   end
 end

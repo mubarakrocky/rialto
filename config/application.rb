@@ -35,11 +35,11 @@ module Rialto
     # config.i18n.default_locale = :de
     
     config.action_mailer.smtp_settings = {
-      :address   => "smtp.sendgrid.net",
+      :address   => "smtp.gmail.com",
       :port      => 587,
       :domain    => 'fishcart.in',
-      :user_name => 'mubarakrocky',
-      :password  => 'mubarak@123',
+      :user_name => 'mubarakbf@gmail.com',
+      :password  => '25081989',
       :authentication => :plain,
       :enable_starttls_auto => true
     }
