@@ -4,10 +4,16 @@ module Logistic
   class OrdersController < ApplicationController
     
     def index
-      @orders = Order.joins(:user).order('id DESC').page(params[:page]).per(10)
+      @orders = Order.joins(:user).order('id DESC')
+                    .select("orders.id, orders.product, orders.status, orders.quantity, user.name, orders.number, orders.stamp")
+                    .page(params[:page]).per(10)
       @total_count = Order.joins(:user).count
       page_count = (@total_count / 11)
       @page_count = page_count + 1
+      respond_to do |format|
+	format.json { render json: { :orders => @orders, :total_count => @page_count } }
+        format.html {}
+      end
     end
     
     def get_last_order

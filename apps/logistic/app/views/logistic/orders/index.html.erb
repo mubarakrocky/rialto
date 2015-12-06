@@ -24,7 +24,7 @@
             <td><%= order.id %></td>
             <td><%= order.product.camelcase %></td>
             <td><%= order.quantity %></td>
-            <td><%= order.user.name.camelcase if order.user.present? %></td>
+            <td><%= order.name.camelcase if order.name.present? %></td>
             <td><%= order.number %></td>
             <td>
             	<div class="col-xs-6"><%= order.status %></div>

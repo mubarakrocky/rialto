@@ -1,12 +1,14 @@
 <div>
-	Hi,
+	Hi,<br />
 </div>
 <div>
-	A new order has been placed. Plese check the order list.
+	A new order has been placed. Please check the order list.
 </div>
 <div>
 	Order ID: <%= @order.id %> <br />
-	Name: <%= @order.product.camelcase %> <br />
+	Product: <%= @order.product.camelcase %> <br />
 	Quantity: <%= @order.quantity %> <br />
 	Phone Number: <%= @order.number %> <br />
+	Name: <%= @order.user.name %><br />
+	Address: <%= @order.user.address %><br />
 </div>

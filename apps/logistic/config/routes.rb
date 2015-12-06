@@ -3,5 +3,6 @@ Logistic::Engine.routes.draw do
   
   resource :orders, only: [:index, :update] do
     get :get_last_order, on: :collection
+    get :index, on: :collection
   end
 end
