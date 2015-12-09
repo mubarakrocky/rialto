@@ -5,4 +5,6 @@ Logistic::Engine.routes.draw do
     get :get_last_order, on: :collection
     get :index, on: :collection
   end
+  
+  resources :devices, only: [:create]
 end
