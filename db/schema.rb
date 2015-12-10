@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209170447) do
+ActiveRecord::Schema.define(version: 20151210085521) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -330,6 +330,7 @@ ActiveRecord::Schema.define(version: 20151209170447) do
     t.integer  "store_id",               limit: 4
     t.string   "approver_name",          limit: 255
     t.boolean  "frontend_viewable",                                             default: true,    null: false
+    t.string   "external_id",            limit: 255
   end
 
   add_index "spree_orders", ["approver_id"], name: "index_spree_orders_on_approver_id", using: :btree
@@ -1133,6 +1134,8 @@ ActiveRecord::Schema.define(version: 20151209170447) do
     t.string   "confirmation_token",     limit: 255
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "name",                   limit: 255
+    t.string   "mobile",                 limit: 255
   end
 
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at", using: :btree

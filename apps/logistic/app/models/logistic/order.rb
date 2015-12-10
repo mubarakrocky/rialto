@@ -1,6 +1,5 @@
 module Logistic
-  class Order < ActiveRecord::Base
-    establish_connection :java
+  class Order < Logistic::JavaDb
     self.table_name = :orders
     self.primary_key = :id
     

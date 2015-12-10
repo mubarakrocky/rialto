@@ -1,6 +1,5 @@
 module Logistic
-  class User < ActiveRecord::Base
-    establish_connection :java
+  class User < Logistic::JavaDb
     self.table_name = :user
     self.primary_key = :id
   end
