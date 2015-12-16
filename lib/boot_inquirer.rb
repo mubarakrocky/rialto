@@ -15,6 +15,7 @@
 
 class BootInquirer
   APPS = {
+    'ecommerce' => 'ecommerce',
     'logistic' => 'logistic'
   }
 

@@ -41,7 +41,11 @@ gem "rack-timeout"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'rails_admin'
+
 gem 'twilio-ruby'
+
+gem 'countries'
 
 BootInquirer.each_active_app do |app|
   gemspec path: "apps/#{app.gem_name}"
