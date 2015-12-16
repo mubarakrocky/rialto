@@ -41,10 +41,6 @@ gem "rack-timeout"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
-gem 'solidus'
-gem 'solidus_auth_devise'
-
 gem 'twilio-ruby'
 
 BootInquirer.each_active_app do |app|

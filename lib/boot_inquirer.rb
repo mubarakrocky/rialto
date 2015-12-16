@@ -15,7 +15,6 @@
 
 class BootInquirer
   APPS = {
-    'fish' => 'fish',
     'logistic' => 'logistic'
   }
 
