@@ -7,5 +7,7 @@ module Ecommerce
     has_many :images, as: :associated
     
     enum product_type: [:simple, :configured]
+    
+    has_many :inventories
   end
 end
